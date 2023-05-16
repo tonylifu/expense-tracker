@@ -1,6 +1,7 @@
 import 'package:expense_tracker/models/expense.dart';
 import 'package:expense_tracker/widgets/expense/expense_list.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -23,11 +24,28 @@ class _Expenses extends State<Expenses> {
         amount: 15.69,
         date: DateTime.now(),
         category: Category.leisure),
+    Expense(
+        title: "Glasgow",
+        amount: 22.29,
+        date: DateTime.now(),
+        category: Category.travel),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Expense Tracker",
+          style: GoogleFonts.lato(),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () => {},
+            icon: const Icon(Icons.add),
+          ),
+        ],
+      ),
       body: Column(
         children: [
           const Text("chart"),
