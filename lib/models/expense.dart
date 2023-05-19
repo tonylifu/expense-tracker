@@ -39,3 +39,38 @@ class Expense {
     return formatter.format(date);
   }
 }
+
+class ExpenseBucket {
+  final Category category;
+  final List<Expense> expenses;
+
+  const ExpenseBucket({
+    required this.category,
+    required this.expenses,
+  });
+
+  ExpenseBucket.category({required allExpense, required this.category})
+      : expenses = allExpense
+            .where(
+              (expense) => expense.category == category,
+            )
+            .toList();
+
+  double get totalExpenses {
+    double sum = 0;
+    for (final expense in expenses) {
+      sum += expense.amount;
+    }
+    return sum;
+  }
+
+  double getTotalExpensesByCategory(Category category) {
+    double sum = 0;
+    for (final expense in expenses) {
+      if (expense.category == category) {
+        sum += expense.amount;
+      }
+    }
+    return sum;
+  }
+}
