@@ -31,27 +31,6 @@ class ExpenseList extends StatelessWidget {
         onDismissed: (direction) => onRemoveExpense(
           expenses[index],
         ),
-        // confirmDismiss: (DismissDirection direction) async {
-        //   final confirmed = await showDialog<bool>(
-        //     context: context,
-        //     builder: (context) {
-        //       return AlertDialog(
-        //         title: const Text('Are you sure you want to delete?'),
-        //         actions: [
-        //           TextButton(
-        //             onPressed: () => Navigator.pop(context, false),
-        //             child: const Text('No'),
-        //           ),
-        //           TextButton(
-        //             onPressed: () => Navigator.pop(context, true),
-        //             child: const Text('Yes'),
-        //           )
-        //         ],
-        //       );
-        //     },
-        //   );
-        //   return confirmed;
-        // },
       ),
       itemCount: expenses.length,
     );
